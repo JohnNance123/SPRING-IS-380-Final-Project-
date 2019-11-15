@@ -1,0 +1,45 @@
+
+**************** OPEN AN ORDER ******************
+
+Today's Date:  14-MAY-19                                                        
+
+Enter the Customer Number: 106
+
+  Customer Name:  Downey, Robert                                                
+
+  Shipping Address:  8041 E Valley Blvd                                         
+
+  City, State Zip:  Alhambra, CA 91801                                          
+
+  Phone:  (949) 588-5125                                                        
+
+
+Enter the Item Number: P4
+
+  Item Number:  P4                                                              
+
+  Item Description:  CBS BB Key                                                 
+
+  Unit Price:       $5.00                                                       
+
+
+Enter the quantity ordered: 60
+
+   Amount Ordered:     $300.00                                                  
+
+
+Please choose from the following warehouse:
+
+Warehouse  City, State               Zip Code             Inventory             
+---------- ------------------------- -------------------- ---------             
+W4         Hawthorne, CA             90250                      380             
+W1         Mission Viejo, CA         92691                      199             
+W2         Commerce, CA              90040                      637             
+
+Enter warehouse code: W2
+
+***** Order Status: OPEN
+
+***** Order number is ---->       1026                                          
+
+
