@@ -1,0 +1,367 @@
+SQL> 
+SQL> drop table COUNTER;
+
+Table dropped.
+
+SQL> drop table INVENTORY;
+
+Table dropped.
+
+SQL> drop table SORDER;
+
+Table dropped.
+
+SQL> drop table CUSTOMER;
+
+Table dropped.
+
+SQL> drop table PRODUCT;
+
+Table dropped.
+
+SQL> drop table WAREHOUSE;
+
+Table dropped.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> create table CUSTOMER (Cnum varchar2(9) primary key, Lname varchar2(20), Fname varchar2(20),
+  2  	     Address varchar2(30), City varchar2(15), State varchar2(2), Zip varchar2(5), Phone varchar2(11));
+
+Table created.
+
+SQL> 
+SQL> create table PRODUCT (Pnum varchar2(2) primary key, Pname varchar2(20), UnitPrice number(4,2));
+
+Table created.
+
+SQL> 
+SQL> create table WAREHOUSE (Wnum varchar2(2) primary key, Address varchar2(20), CityState varchar2(25),
+  2  	     Zip varchar2(5), Phone varchar2(11));
+
+Table created.
+
+SQL> 
+SQL> create table SORDER (Onum varchar2(4) primary key, OrderDate date, OrderStatus varchar2(10), Cnum varchar2(9), Pnum varchar2(10),
+  2  	     Wnum varchar2(2), OrdQty number(4), UnitPrice number(4,2), OrderAmt number(6,2), ShipDate date, ShipQty number(4), ShipAmt number(6,2),
+  3  	     constraint fkp# foreign key (Pnum) references PRODUCT(Pnum),
+  4  	     constraint fkc# foreign key (Cnum) references CUSTOMER(Cnum),
+  5  	     constraint fkw# foreign key (Wnum) references WAREHOUSE(Wnum));
+
+Table created.
+
+SQL> 
+SQL> create table INVENTORY (Pnum varchar2(2), Wnum varchar2(2), InvQty number(4),
+  2  	     primary key (Pnum, Wnum),
+  3  	     constraint fkpinvent foreign key (Pnum) references PRODUCT(Pnum),
+  4  	     constraint fkwinvent foreign key (Wnum) references WAREHOUSE(Wnum));
+
+Table created.
+
+SQL> 
+SQL> create table COUNTER (maxnum number(5));
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> insert into CUSTOMER values('101', 'Barker', 'Nigel', '4128 N Prospect Ave', 'Redondo Beach', 'CA', '90503', 3105468544);
+
+1 row created.
+
+SQL> insert into CUSTOMER values('102', 'Banks', 'Tyra', '58215 Overhill Dr', 'Los Angeles', 'CA', '90056', 3238184444);
+
+1 row created.
+
+SQL> insert into CUSTOMER values('103', 'Knowles', 'Solange', '78453 Woodrow Wilson Dr', 'Los Angeles', 'CA', '90049', 8184585666);
+
+1 row created.
+
+SQL> insert into CUSTOMER values('104', 'Chen', 'Julie', '5861 Long Valley Rd', 'Hidden Hills', 'CA', '91302', 7474552544);
+
+1 row created.
+
+SQL> insert into CUSTOMER values('105', 'Grier', 'Pam', '78120	Pacific Coast HWY', 'Santa Monica', 'CA', '90405', 3107474888);
+
+1 row created.
+
+SQL> insert into CUSTOMER values('106', 'Downey', 'Robert', '8041 E Valley Blvd', 'Alhambra', 'CA', '91801', 9495885125);
+
+1 row created.
+
+SQL> 
+SQL> insert into PRODUCT values('P1', '35mm Kodak Film', 3.50);
+
+1 row created.
+
+SQL> insert into PRODUCT values('P2', '25mm Mink Lashes', 1.50);
+
+1 row created.
+
+SQL> insert into PRODUCT values('P3', 'Uni Straw Hat', 15.00);
+
+1 row created.
+
+SQL> insert into PRODUCT values('P4', 'CBS BB Key', 5.00);
+
+1 row created.
+
+SQL> insert into PRODUCT values('P5', '40X20 WHT Canvas', 13.50);
+
+1 row created.
+
+SQL> insert into PRODUCT values('P6', '140 Vol Bleach', 8.00);
+
+1 row created.
+
+SQL> insert into PRODUCT values('P7', 'Pot Ledom Shirts', 17.00);
+
+1 row created.
+
+SQL> 
+SQL> insert into WAREHOUSE values('W1', '70825 Parkway Rd', 'Mission Viejo, CA', '92691', 8185647555);
+
+1 row created.
+
+SQL> insert into WAREHOUSE values('W2', '51458 Runder St', 'Commerce, CA', '90040', 6255856455);
+
+1 row created.
+
+SQL> insert into WAREHOUSE values('W3', '78240 S Figueroa St', 'Carson, CA', '90746', 3234855588);
+
+1 row created.
+
+SQL> insert into WAREHOUSE values('W4', '540 120th St', 'Hawthorne, CA', '90250', 3105854522);
+
+1 row created.
+
+SQL> 
+SQL> insert into SORDER values('1001', '11-Jan-2019', 'Shipped', '103', 'P3', 'W2', 50, 15.00, 750.00, '13-Jan-2019', 50, 750.00);
+
+1 row created.
+
+SQL> insert into SORDER values('1002', '11-Jan-2019', 'Shipped', '102', 'P2', 'W2', 500, 1.50, 750.00, '25-Jan-2019', 500, 750.00);
+
+1 row created.
+
+SQL> insert into SORDER values('1003', '12-Jan-2019', 'Shipped', '101', 'P1', 'W4', 150, 3.50, 525.00, '01-Feb-2019', 150, 525.00);
+
+1 row created.
+
+SQL> insert into SORDER values('1004', '01-Feb-2019', 'Shipped', '104', 'P4', 'W4', 20, 5.00, 100.00, '10-Mar-2019', 20, 100.00);
+
+1 row created.
+
+SQL> insert into SORDER values('1005', '15-April-2019', 'Shipped', '101', 'P7', 'W1', 100, 17.00, 1700.00, '25-April-2019', 100, 1700.00);
+
+1 row created.
+
+SQL> insert into SORDER values('1006', '20-Mar-2019', 'Shipped', '105', 'P5', 'W3', 25, 13.50, 337.50, '23-Mar-2019', 25, 337.50);
+
+1 row created.
+
+SQL> insert into SORDER values('1007', '31-Mar-2019', 'Shipped', '106', 'P6', 'W2', 100, 8.00, 800.00, '05-April-2019', 100, 800.00);
+
+1 row created.
+
+SQL> 
+SQL> insert into INVENTORY values('P1', 'W1', 300);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P1', 'W2', 108);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P2', 'W3', 500);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P2', 'W4', 180);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P3', 'W2', 437);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P3', 'W3', 367);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P4', 'W4', 380);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P4', 'W1', 199);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P4', 'W2', 637);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P5', 'W3', 281);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P5', 'W4', 199);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P6', 'W2', 105);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P6', 'W3', 750);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P6', 'W1', 453);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P7', 'W1', 127);
+
+1 row created.
+
+SQL> insert into INVENTORY values('P7', 'W2', 200);
+
+1 row created.
+
+SQL> 
+SQL> insert into COUNTER values(1009);
+
+1 row created.
+
+SQL> 
+SQL> select * from CUSTOMER;
+
+CNUM LNAME      FNAME      ADDRESS                        CITY            STATE 
+---- ---------- ---------- ------------------------------ --------------- ------
+ZIP   PHONE                                                                     
+----- -----------                                                               
+101  Barker     Nigel      4128 N Prospect Ave            Redondo Beach   CA    
+90503 3105468544                                                                
+                                                                                
+102  Banks      Tyra       58215 Overhill Dr              Los Angeles     CA    
+90056 3238184444                                                                
+                                                                                
+103  Knowles    Solange    78453 Woodrow Wilson Dr        Los Angeles     CA    
+90049 8184585666                                                                
+                                                                                
+
+CNUM LNAME      FNAME      ADDRESS                        CITY            STATE 
+---- ---------- ---------- ------------------------------ --------------- ------
+ZIP   PHONE                                                                     
+----- -----------                                                               
+104  Chen       Julie      5861 Long Valley Rd            Hidden Hills    CA    
+91302 7474552544                                                                
+                                                                                
+105  Grier      Pam        78120  Pacific Coast HWY       Santa Monica    CA    
+90405 3107474888                                                                
+                                                                                
+106  Downey     Robert     8041 E Valley Blvd             Alhambra        CA    
+91801 9495885125                                                                
+                                                                                
+
+6 rows selected.
+
+SQL> select * from PRODUCT;
+
+PN PNAME                 UNITPRICE                                              
+-- -------------------- ----------                                              
+P1 35mm Kodak Film             3.5                                              
+P2 25mm Mink Lashes            1.5                                              
+P3 Uni Straw Hat                15                                              
+P4 CBS BB Key                    5                                              
+P5 40X20 WHT Canvas           13.5                                              
+P6 140 Vol Bleach                8                                              
+P7 Pot Ledom Shirts             17                                              
+
+7 rows selected.
+
+SQL> select * from WAREHOUSE;
+
+WN ADDRESS                        CITYSTATE                 ZIP   PHONE         
+-- ------------------------------ ------------------------- ----- -----------   
+W1 70825 Parkway Rd               Mission Viejo, CA         92691 8185647555    
+W2 51458 Runder St                Commerce, CA              90040 6255856455    
+W3 78240 S Figueroa St            Carson, CA                90746 3234855588    
+W4 540 120th St                   Hawthorne, CA             90250 3105854522    
+
+SQL> select * from SORDER;
+
+ONUM ORDERDATE ORDERSTATU CNUM PNUM       WN     ORDQTY  UNITPRICE   ORDERAMT   
+---- --------- ---------- ---- ---------- -- ---------- ---------- ----------   
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1001 11-JAN-19 Shipped    103  P3         W2         50         15        750   
+13-JAN-19         50        750                                                 
+                                                                                
+1002 11-JAN-19 Shipped    102  P2         W2        500        1.5        750   
+25-JAN-19        500        750                                                 
+                                                                                
+1003 12-JAN-19 Shipped    101  P1         W4        150        3.5        525   
+01-FEB-19        150        525                                                 
+                                                                                
+
+ONUM ORDERDATE ORDERSTATU CNUM PNUM       WN     ORDQTY  UNITPRICE   ORDERAMT   
+---- --------- ---------- ---- ---------- -- ---------- ---------- ----------   
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1004 01-FEB-19 Shipped    104  P4         W4         20          5        100   
+10-MAR-19         20        100                                                 
+                                                                                
+1005 15-APR-19 Shipped    101  P7         W1        100         17       1700   
+25-APR-19        100       1700                                                 
+                                                                                
+1006 20-MAR-19 Shipped    105  P5         W3         25       13.5      337.5   
+23-MAR-19         25      337.5                                                 
+                                                                                
+
+ONUM ORDERDATE ORDERSTATU CNUM PNUM       WN     ORDQTY  UNITPRICE   ORDERAMT   
+---- --------- ---------- ---- ---------- -- ---------- ---------- ----------   
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1007 31-MAR-19 Shipped    106  P6         W2        100          8        800   
+05-APR-19        100        800                                                 
+                                                                                
+
+7 rows selected.
+
+SQL> select * from INVENTORY;
+
+PN WN     INVQTY                                                                
+-- -- ----------                                                                
+P1 W1        300                                                                
+P1 W2        108                                                                
+P2 W3        500                                                                
+P2 W4        180                                                                
+P3 W2        437                                                                
+P3 W3        367                                                                
+P4 W4        380                                                                
+P4 W1        199                                                                
+P4 W2        637                                                                
+P5 W3        281                                                                
+P5 W4        199                                                                
+
+PN WN     INVQTY                                                                
+-- -- ----------                                                                
+P6 W2        105                                                                
+P6 W3        750                                                                
+P6 W1        453                                                                
+P7 W1        127                                                                
+P7 W2        200                                                                
+
+16 rows selected.
+
+SQL> select * from COUNTER;
+
+    MAXNUM                                                                      
+----------                                                                      
+      1009                                                                      
+
+SQL> 
+SQL> spool off

@@ -1,0 +1,25 @@
+
+******** SALES REPORT ********
+
+Prod   Product              Order       No of  Total        Total               
+No     Name                 Month      Orders    Qty       Amount               
+------ -------------------- ---------- ------ ------ ------------               
+P1     35mm Kodak Film      01/2019         1    150      $525.00               
+P1     35mm Kodak Film      05/2019         3    142      $497.00               
+P2     25mm Mink Lashes     01/2019         1    500      $750.00               
+P2     25mm Mink Lashes     05/2019         3    132      $198.00               
+P3     Uni Straw Hat        01/2019         1     50      $750.00               
+P3     Uni Straw Hat        05/2019         3    108    $1,620.00               
+P4     CBS BB Key           02/2019         1     20      $100.00               
+P4     CBS BB Key           05/2019         3    185      $925.00               
+P5     40X20 WHT Canvas     03/2019         1     25      $337.50               
+P5     40X20 WHT Canvas     05/2019         2    172    $2,322.00               
+
+Prod   Product              Order       No of  Total        Total               
+No     Name                 Month      Orders    Qty       Amount               
+------ -------------------- ---------- ------ ------ ------------               
+P6     140 Vol Bleach       03/2019         1    100      $800.00               
+P6     140 Vol Bleach       05/2019         2    131    $1,048.00               
+P7     Pot Ledom Shirts     04/2019         1    100    $1,700.00               
+P7     Pot Ledom Shirts     05/2019         2    134    $2,278.00               
+

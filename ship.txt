@@ -1,0 +1,54 @@
+
+****** UPDATE SHIPPING ******
+
+
+Today's Date:  14-MAY-19                                                        
+
+
+Please enter Order Number: 1021
+
+Order Number:  1021                                                             
+
+Order Date:  14-MAY-19                                                          
+
+Customer Number:  101                                                           
+
+      Barker, Nigel                                                             
+
+      4128 N Prospect Ave                                                       
+
+      Redondo Beach, CA 90503                                                   
+
+      (310) 546-8544                                                            
+
+Item Number:  P6                                                                
+
+      Item Description:  140 Vol Bleach                                         
+
+      Unit Price:       $8.00                                                   
+
+Quantity Ordered:  35                                                           
+
+Amount Ordered:     $280.00                                                     
+
+
+Shipping Warehouse:  W1                                                         
+
+      70825 Parkway Rd                                                          
+
+      Mission Viejo, CA 92691                                                   
+
+      (818) 564-7555                                                            
+
+Please enter quantity shipped: 7
+
+********************************************
+Order is now ---> SHIPPED
+
+Date Shipped:  14-MAY-19                                                        
+
+Quantity Shipped:  7                                                            
+
+Amount Shipped:      $56.00                                                     
+
+

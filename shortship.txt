@@ -1,0 +1,17 @@
+
+******** SHORT SHIP REPORT ********
+
+
+Today's Date:  05/14/2019                                                       
+
+
+
+                                 Number of      Total                           
+                                Short Ship Short Ship                           
+Warehouse  City, State              Orders        Qty                           
+---------- -------------------- ---------- ----------                           
+W1         Mission Viejo, CA             5         68                           
+W4         Hawthorne, CA                 3         61                           
+W2         Commerce, CA                  2         42                           
+W3         Carson, CA                    3         17                           
+

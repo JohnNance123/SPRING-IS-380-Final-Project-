@@ -1,0 +1,345 @@
+SQL> 
+SQL> prompt
+
+SQL> describe customer;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CNUM                                      NOT NULL VARCHAR2(9)
+ LNAME                                              VARCHAR2(20)
+ FNAME                                              VARCHAR2(20)
+ ADDRESS                                            VARCHAR2(30)
+ CITY                                               VARCHAR2(15)
+ STATE                                              VARCHAR2(2)
+ ZIP                                                VARCHAR2(5)
+ PHONE                                              VARCHAR2(11)
+
+SQL> prompt
+
+SQL> describe product;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PNUM                                      NOT NULL VARCHAR2(2)
+ PNAME                                              VARCHAR2(20)
+ UNITPRICE                                          NUMBER(4,2)
+
+SQL> prompt
+
+SQL> describe warehouse;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ WNUM                                      NOT NULL VARCHAR2(2)
+ ADDRESS                                            VARCHAR2(20)
+ CITYSTATE                                          VARCHAR2(25)
+ ZIP                                                VARCHAR2(5)
+ PHONE                                              VARCHAR2(11)
+
+SQL> prompt
+
+SQL> describe sorder;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ONUM                                      NOT NULL VARCHAR2(4)
+ ORDERDATE                                          DATE
+ ORDERSTATUS                                        VARCHAR2(10)
+ CNUM                                               VARCHAR2(9)
+ PNUM                                               VARCHAR2(10)
+ WNUM                                               VARCHAR2(2)
+ ORDQTY                                             NUMBER(4)
+ UNITPRICE                                          NUMBER(4,2)
+ ORDERAMT                                           NUMBER(6,2)
+ SHIPDATE                                           DATE
+ SHIPQTY                                            NUMBER(4)
+ SHIPAMT                                            NUMBER(6,2)
+
+SQL> prompt
+
+SQL> describe inventory;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PNUM                                      NOT NULL VARCHAR2(2)
+ WNUM                                      NOT NULL VARCHAR2(2)
+ INVQTY                                             NUMBER(4)
+
+SQL> prompt
+
+SQL> describe counter;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MAXNUM                                             NUMBER(5)
+
+SQL> prompt
+
+SQL> select * from customer;
+
+CNUM LNAME      FNAME      ADDRESS                        CITY            STATE 
+---- ---------- ---------- ------------------------------ --------------- ------
+Zip Code             PHONE                                                      
+-------------------- -----------                                                
+101  Barker     Nigel      4128 N Prospect Ave            Redondo Beach   CA    
+90503                3105468544                                                 
+                                                                                
+102  Banks      Tyra       58215 Overhill Dr              Los Angeles     CA    
+90056                3238184444                                                 
+                                                                                
+103  Knowles    Solange    78453 Woodrow Wilson Dr        Los Angeles     CA    
+90049                8184585666                                                 
+                                                                                
+
+CNUM LNAME      FNAME      ADDRESS                        CITY            STATE 
+---- ---------- ---------- ------------------------------ --------------- ------
+Zip Code             PHONE                                                      
+-------------------- -----------                                                
+104  Chen       Julie      5861 Long Valley Rd            Hidden Hills    CA    
+91302                7474552544                                                 
+                                                                                
+105  Grier      Pam        78120  Pacific Coast HWY       Santa Monica    CA    
+90405                3107474888                                                 
+                                                                                
+106  Downey     Robert     8041 E Valley Blvd             Alhambra        CA    
+91801                9495885125                                                 
+                                                                                
+SQL> prompt
+
+SQL> select * from product;
+
+Prod Product               Unit                                                 
+Num  Description          Price                                                 
+---- ---------------- ---------                                                 
+P1   35mm Kodak Film       3.50                                                 
+P2   25mm Mink Lashes      1.50                                                 
+P3   Uni Straw Hat        15.00                                                 
+P4   CBS BB Key            5.00                                                 
+P5   40X20 WHT Canvas     13.50                                                 
+P6   140 Vol Bleach        8.00                                                 
+P7   Pot Ledom Shirts     17.00                                                 
+SQL> prompt
+
+SQL> select * from warehouse;
+
+Warehouse  ADDRESS                        City, State                           
+---------- ------------------------------ --------------------                  
+Zip Code             PHONE                                                      
+-------------------- -----------                                                
+W1         70825 Parkway Rd               Mission Viejo, CA                     
+92691                8185647555                                                 
+                                                                                
+W2         51458 Runder St                Commerce, CA                          
+90040                6255856455                                                 
+                                                                                
+W3         78240 S Figueroa St            Carson, CA                            
+90746                3234855588                                                 
+                                                                                
+
+Warehouse  ADDRESS                        City, State                           
+---------- ------------------------------ --------------------                  
+Zip Code             PHONE                                                      
+-------------------- -----------                                                
+W4         540 120th St                   Hawthorne, CA                         
+90250                3105854522                                                 
+                                                                                
+SQL> prompt
+
+SQL> select * from sorder;
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1001   11-JAN-19 Shippe 103  P3   W2             50     15.00    750.00         
+                 d                                                              
+13-JAN-19         50        750                                                 
+                                                                                
+1002   11-JAN-19 Shippe 102  P2   W2            500      1.50    750.00         
+                 d                                                              
+25-JAN-19        500        750                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1003   12-JAN-19 Shippe 101  P1   W4            150      3.50    525.00         
+                 d                                                              
+01-FEB-19        150        525                                                 
+                                                                                
+1004   01-FEB-19 Shippe 104  P4   W4             20      5.00    100.00         
+                 d                                                              
+10-MAR-19         20        100                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1005   15-APR-19 Shippe 101  P7   W1            100     17.00  1,700.00         
+                 d                                                              
+25-APR-19        100       1700                                                 
+                                                                                
+1006   20-MAR-19 Shippe 105  P5   W3             25     13.50    337.50         
+                 d                                                              
+23-MAR-19         25      337.5                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1007   31-MAR-19 Shippe 106  P6   W2            100      8.00    800.00         
+                 d                                                              
+05-APR-19        100        800                                                 
+                                                                                
+1009   14-MAY-19 SHIPPE 101  P1   W1             20      3.50     70.00         
+                 D                                                              
+14-MAY-19         15       52.5                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1010   14-MAY-19 SHIPPE 102  P2   W3             15      1.50     22.50         
+                 D                                                              
+14-MAY-19         10         15                                                 
+                                                                                
+1011   14-MAY-19 SHIPPE 103  P3   W2             35     15.00    525.00         
+                 D                                                              
+14-MAY-19         17        255                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1012   14-MAY-19 SHIPPE 104  P4   W4             55      5.00    275.00         
+                 D                                                              
+14-MAY-19         27        135                                                 
+                                                                                
+1013   14-MAY-19 SHIPPE 105  P5   W3             73     13.50    985.50         
+                 D                                                              
+14-MAY-19         70        945                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1014   14-MAY-19 SHIPPE 106  P6   W2             96      8.00    768.00         
+                 D                                                              
+14-MAY-19         72        576                                                 
+                                                                                
+1015   14-MAY-19 SHIPPE 101  P7   W1             54     17.00    918.00         
+                 D                                                              
+14-MAY-19         50        850                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1016   14-MAY-19 SHIPPE 102  P1   W1             63      3.50    220.50         
+                 D                                                              
+14-MAY-19         52        182                                                 
+                                                                                
+1017   14-MAY-19 SHIPPE 103  P2   W4             26      1.50     39.00         
+                 D                                                              
+14-MAY-19         20         30                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1018   14-MAY-19 SHIPPE 104  P3   W3             59     15.00    885.00         
+                 D                                                              
+14-MAY-19         50        750                                                 
+                                                                                
+1019   14-MAY-19 SHIPPE 105  P4   W1             70      5.00    350.00         
+                 D                                                              
+14-MAY-19         50        250                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1020   14-MAY-19 SHIPPE 106  P5   W4             99     13.50  1,336.50         
+                 D                                                              
+14-MAY-19         72        972                                                 
+                                                                                
+1021   14-MAY-19 SHIPPE 101  P6   W1             35      8.00    280.00         
+                 D                                                              
+14-MAY-19          7         56                                                 
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+1022   14-MAY-19 OPEN   102  P7   W2             80     17.00  1,360.00         
+                                                                                
+                                                                                
+1023   14-MAY-19 OPEN   103  P1   W2             59      3.50    206.50         
+                                                                                
+                                                                                
+1024   14-MAY-19 OPEN   104  P2   W4             91      1.50    136.50         
+                                                                                
+
+Order            Order       Prod             Order      Unit     Order         
+Number ORDERDATE Status CNUM Num  Warehouse     Qty     Price    Amount         
+------ --------- ------ ---- ---- ---------- ------ --------- ---------         
+SHIPDATE     SHIPQTY    SHIPAMT                                                 
+--------- ---------- ----------                                                 
+                                                                                
+1025   14-MAY-19 OPEN   105  P3   W2             14     15.00    210.00         
+                                                                                
+                                                                                
+1026   14-MAY-19 OPEN   106  P4   W2             60      5.00    300.00         
+                                                                                
+                                                                                
+SQL> prompt
+
+SQL> select * from inventory;
+
+Prod                                                                            
+Num  Warehouse  Inventory                                                       
+---- ---------- ---------                                                       
+P1   W1               233                                                       
+P1   W2               108                                                       
+P2   W3               490                                                       
+P2   W4               160                                                       
+P3   W2               420                                                       
+P3   W3               317                                                       
+P4   W4               353                                                       
+P4   W1               149                                                       
+P4   W2               637                                                       
+P5   W3               211                                                       
+
+Prod                                                                            
+Num  Warehouse  Inventory                                                       
+---- ---------- ---------                                                       
+P5   W4               127                                                       
+P6   W2                33                                                       
+P6   W3               750                                                       
+P6   W1               446                                                       
+P7   W1                77                                                       
+P7   W2               200                                                       
+SQL> prompt
+
+SQL> select * from counter;
+
+    MAXNUM                                                                      
+----------                                                                      
+      1027                                                                      
+SQL> 
+SQL> spool off

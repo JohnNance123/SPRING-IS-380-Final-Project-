@@ -1,0 +1,32 @@
+****** AGING REPORT ******
+
+Today's Date:  05/14/2019                                                       
+
+
+
+
+Order  Order      Order  Prod Product           Order      Unit     Order Days  
+Number Date       Status Num  Description         Qty     Price    Amount Open  
+------ ---------- ------ ---- ---------------- ------ --------- --------- ----  
+1010   05/14/2019 OPEN   P2   25mm Mink Lashes     15      1.50     22.50    0  
+1011   05/14/2019 OPEN   P3   Uni Straw Hat        35     15.00    525.00    0  
+1012   05/14/2019 OPEN   P4   CBS BB Key           55      5.00    275.00    0  
+1013   05/14/2019 OPEN   P5   40X20 WHT Canvas     73     13.50    985.50    0  
+1014   05/14/2019 OPEN   P6   140 Vol Bleach       96      8.00    768.00    0  
+1015   05/14/2019 OPEN   P7   Pot Ledom Shirts     54     17.00    918.00    0  
+1016   05/14/2019 OPEN   P1   35mm Kodak Film      63      3.50    220.50    0  
+1017   05/14/2019 OPEN   P2   25mm Mink Lashes     26      1.50     39.00    0  
+1018   05/14/2019 OPEN   P3   Uni Straw Hat        59     15.00    885.00    0  
+1019   05/14/2019 OPEN   P4   CBS BB Key           70      5.00    350.00    0  
+
+Order  Order      Order  Prod Product           Order      Unit     Order Days  
+Number Date       Status Num  Description         Qty     Price    Amount Open  
+------ ---------- ------ ---- ---------------- ------ --------- --------- ----  
+1020   05/14/2019 OPEN   P5   40X20 WHT Canvas     99     13.50  1,336.50    0  
+1021   05/14/2019 OPEN   P6   140 Vol Bleach       35      8.00    280.00    0  
+1022   05/14/2019 OPEN   P7   Pot Ledom Shirts     80     17.00  1,360.00    0  
+1023   05/14/2019 OPEN   P1   35mm Kodak Film      59      3.50    206.50    0  
+1024   05/14/2019 OPEN   P2   25mm Mink Lashes     91      1.50    136.50    0  
+1025   05/14/2019 OPEN   P3   Uni Straw Hat        14     15.00    210.00    0  
+1026   05/14/2019 OPEN   P4   CBS BB Key           60      5.00    300.00    0  
+
