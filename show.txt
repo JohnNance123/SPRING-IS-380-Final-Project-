@@ -1,0 +1,51 @@
+
+*************** SHOW ORDER DETAIL ****************
+
+Please enter the Order Number: 1009
+
+
+Order Number:  1009                                                             
+
+Order Status:  SHIPPED                                                          
+
+
+Customer Number:  101                                                           
+
+    Barker, Nigel                                                               
+
+    4128 N Prospect Ave                                                         
+
+    Redondo Beach, CA 90503                                                     
+
+    (310) 546-8544                                                              
+
+
+Item Number:  P1                                                                
+
+  Item Description:  35mm Kodak Film                                            
+
+  Unit Price:      $3.50                                                        
+
+
+Order Date:  14-MAY-19                                                          
+
+Shipping Date:  14-MAY-19                                                       
+
+
+Quantity Ordered: 20                                                            
+
+Amount Ordered:     $70.00                                                      
+
+Quantity Shipped: 15                                                            
+
+Amount Shipped:     $52.50                                                      
+
+
+Shipping Warehouse:  W1                                                         
+
+    70825 Parkway Rd                                                            
+
+    Mission Viejo, CA 92691                                                     
+
+    (818) 564-7555                                                              
+
